@@ -20,9 +20,9 @@ class Bill {
     
     // MARK: -Properties
     var name: String
-    let dueDate: String
+    var dueDate: String
     var merchant: String
-    var amount: Double
+    var amount: String
     let uuid: String
     
     var BillData: [String: Any] {
@@ -34,7 +34,7 @@ class Bill {
     }
     
     // MARK: -Inits
-    init(name: String, dueDate: String, merchant: String, amount: Double, uuid: String = UUID().uuidString) {
+    init(name: String, dueDate: String, merchant: String, amount: String, uuid: String = UUID().uuidString) {
         self.name = name
         self.dueDate = dueDate
         self.merchant = merchant
@@ -47,7 +47,7 @@ class Bill {
         guard let name = dictionary[Key.name] as? String,
               let dueDate = dictionary[Key.dueDate] as? String,
               let merchant = dictionary[Key.merchant] as? String,
-              let amount = dictionary[Key.amount] as? Double,
+              let amount = dictionary[Key.amount] as? String,
               let uuid = dictionary[Key.uuid] as? String
         else { return nil }
         

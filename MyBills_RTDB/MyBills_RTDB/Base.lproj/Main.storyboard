@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--List Table View Controller-->
         <scene sceneID="ouD-Y7-xkH">
             <objects>
-                <tableViewController id="d7M-lM-Ljc" sceneMemberID="viewController">
+                <tableViewController id="d7M-lM-Ljc" customClass="ListTableViewController" customModule="MyBills_RTDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zkv-Sg-mSF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                             <size key="shadowOffset" width="2" height="-1"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1Se-dE-jLk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" id="1Se-dE-jLk">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Se-dE-jLk" id="dS1-ww-pax">
@@ -49,6 +49,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="KgS-xy-s6H">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
+                                <action selector="addButtonTapped:" destination="d7M-lM-Ljc" id="qXd-o0-ddj"/>
                                 <segue destination="VGa-lR-MrR" kind="show" id="ZWQ-wx-YYY"/>
                             </connections>
                         </barButtonItem>
@@ -58,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="555" y="159"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="vJU-kz-OyK">
             <objects>
-                <viewController id="VGa-lR-MrR" sceneMemberID="viewController">
+                <viewController id="VGa-lR-MrR" customClass="DetailViewController" customModule="MyBills_RTDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aih-xF-Gdb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +81,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Due Date..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-xH-xfH">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Due Date... ex. 02/23/2022" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-xH-xfH">
                                 <rect key="frame" x="10" y="186" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -90,7 +91,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount... " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocT-uf-Xkw">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount... ex. 132.89" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocT-uf-Xkw">
                                 <rect key="frame" x="10" y="274" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -121,7 +122,19 @@
                             <constraint firstItem="HA6-Tj-acC" firstAttribute="top" secondItem="ocT-uf-Xkw" secondAttribute="bottom" constant="20" id="xQS-lq-ScN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yPE-hn-7Iw"/>
+                    <navigationItem key="navigationItem" id="yPE-hn-7Iw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="clf-7H-7RZ">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="VGa-lR-MrR" id="eeC-lf-hXQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="ocT-uf-Xkw" id="7S3-cI-Gc2"/>
+                        <outlet property="dueDateTextField" destination="rNK-xH-xfH" id="gmD-7Z-Sz0"/>
+                        <outlet property="merchantNameTextField" destination="zUp-AA-PqD" id="D70-Og-hiD"/>
+                        <outlet property="nameTextFIeld" destination="oOg-io-2to" id="T6h-bA-2i9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKb-iF-LJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
