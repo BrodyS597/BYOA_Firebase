@@ -36,7 +36,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.59897506239999998" green="0.86541324850000001" blue="0.78463470940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="VGa-lR-MrR" kind="show" id="HRP-aw-dOm"/>
+                                    <segue destination="VGa-lR-MrR" kind="show" identifier="showBill" id="HRP-aw-dOm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,7 +50,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonTapped:" destination="d7M-lM-Ljc" id="qXd-o0-ddj"/>
-                                <segue destination="VGa-lR-MrR" kind="show" id="ZWQ-wx-YYY"/>
+                                <segue destination="VGa-lR-MrR" kind="show" id="2P9-SA-P6p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -158,7 +158,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZWQ-wx-YYY"/>
+        <segue reference="2P9-SA-P6p"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Burnin'Benji" width="573" height="425"/>

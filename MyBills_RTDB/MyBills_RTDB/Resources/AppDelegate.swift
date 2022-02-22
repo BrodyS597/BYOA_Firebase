@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+//        let firebase = FirebaseController()
+//        let testBill = Bill(name: "a test bill", dueDate: "10/24/2012", merchant: "Karl's Dark Souls Academy", amount: "6 billion doll hairs", uuid: "Test uuid")
+//        firebase.saveBill(testBill)
         return true
     }
 
