@@ -14,11 +14,31 @@ class ListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ListTVCModel(delegate: self)
+        
+            //uncomment the line below if you want to experience the Benji RAM Killer 600
+        //createLayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    private func createLayer() {
+        let layer = CAEmitterLayer()
+        layer.emitterPosition = CGPoint(x: 200, y: 200)
+        
+        let cell = CAEmitterCell()
+        cell.scale = 0.20
+        cell.emissionRange = .pi * 2
+        cell.lifetime = 20
+        cell.birthRate = 20
+        cell.velocity = 400
+        //cell.color =
+        cell.contents = UIImage(named: "Burnin'Benji")!.cgImage
+        layer.emitterCells = [cell]
+        
+        view.layer.addSublayer(layer)
     }
     
     // MARK: -IBActions

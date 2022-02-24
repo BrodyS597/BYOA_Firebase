@@ -20,10 +20,13 @@ class LoginViewController: UIViewController {
         
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        checkUserInfo()
+    }
     
     // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
+        validateFields()
         //        if validateFields() {
         //        } else {
         //            print("Fields are empty")
@@ -90,6 +93,17 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
             }
             strongSelf.segueToBillsList()
+        }
+    }
+    
+    func checkUserInfo() {
+        if Auth.auth().currentUser != nil {
+            print(Auth.auth().currentUser?.uid)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "navCon")
+            
+            viewController.modalPresentationStyle = .overFullScreen
+            present(viewController, animated: true)
         }
     }
     
