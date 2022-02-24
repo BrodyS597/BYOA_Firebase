@@ -11,14 +11,34 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    //creating our window property to be of type UIWindow to be used below
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
-//        let firebase = FirebaseController()
-//        let testBill = Bill(name: "a test bill", dueDate: "10/24/2012", merchant: "Karl's Dark Souls Academy", amount: "6 billion doll hairs", uuid: "Test uuid")
-//        firebase.saveBill(testBill)
+
+        
+        //setting the device window size and bounds
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        //creating the story board as the value of a UIStoryboard named "Main"
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        //creating a variable called "vc" to be of type UIViewController to be used below
+//        var vc: UIViewController
+//        
+//        if (UserDefaults.standard.value(forKey: "email") as? String) == nil {
+//            // show the login screen if email is nil
+//                //assigning the value of the vc(UIViewController) to be the instantiated VC called "login"
+//            vc = storyboard.instantiateViewController(withIdentifier: "login")
+//        } else {
+//            //show the main screen
+//            vc = storyboard.instantiateInitialViewController()!
+//        }
+//        
+//        //setting the root view controller
+//        self.window?.rootViewController = vc
+//        //shows the window and makes it the key window
+//        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
