@@ -16,6 +16,11 @@ class Bill {
         static let merchant = "merchant"
         static let amount = "amount"
         static let uuid = "uuid"
+        static let imageURL = "imageURL"
+    }
+    
+    var imagePath: String {
+        "images/\(self.uuid)"
     }
     
     // MARK: -Properties
@@ -24,22 +29,25 @@ class Bill {
     var merchant: String
     var amount: String
     let uuid: String
+    var imageURL: URL?
     
     var BillData: [String: Any] {
         [Key.name : self.name,
          Key.dueDate : self.dueDate,
          Key.merchant : self.merchant,
          Key.amount : self.amount,
-         Key.uuid : self.uuid]
+         Key.uuid : self.uuid,
+         Key.imageURL : self.imageURL?.absoluteString ?? nil]
     }
     
     // MARK: -Inits
-    init(name: String, dueDate: String, merchant: String, amount: String, uuid: String = UUID().uuidString) {
+    init(name: String, dueDate: String, merchant: String, amount: String, uuid: String = UUID().uuidString, imageURL: URL? = nil) {
         self.name = name
         self.dueDate = dueDate
         self.merchant = merchant
         self.amount = amount
         self.uuid = uuid
+        self.imageURL = imageURL
     }
     
     ///Optional Init
@@ -56,6 +64,9 @@ class Bill {
         self.merchant = merchant
         self.amount = amount
         self.uuid = uuid
+        
+        guard let imageURLString = dictionary[Key.imageURL] as? String else { return }
+        let imageURL = URL(string: imageURLString)
+        self.imageURL = imageURL
     }
-    
 }
