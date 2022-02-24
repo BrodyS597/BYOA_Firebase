@@ -69,9 +69,12 @@ class SignUpViewController: UIViewController {
             }
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "MyBillsList")
-            viewController.modalPresentationStyle = .overFullScreen
-            self.present(viewController, animated: true)
+            let navigationController = storyboard.instantiateViewController(withIdentifier: "navCon") as? UINavigationController
+            let listViewController = navigationController?.viewControllers[0] as? ListTableViewController
+            
+            navigationController?.modalPresentationStyle = .overFullScreen
+            
+            self.present(navigationController!, animated: true)
         }
     }
     

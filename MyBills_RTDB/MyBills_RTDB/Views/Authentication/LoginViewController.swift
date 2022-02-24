@@ -24,10 +24,11 @@ class LoginViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
-//        if validateFields() {
-//        } else {
-//            print("Fields are empty")
-//        }
+        //        if validateFields() {
+        //        } else {
+        //            print("Fields are empty")
+        //        }
+        
         if let emailAddress = emailAddressTextField.text, !emailAddress.isEmpty,
            let password = passwordTextField.text, !password.isEmpty {
             
@@ -41,18 +42,18 @@ class LoginViewController: UIViewController {
                     
                 case .some(let userDetails):
                     print("Welcome back!", userDetails.user.email!)
-                    let storyboard = UIStoryboard(name: "MyBillsList", bundle: nil)
-                    let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController
-                    let HomePageViewModel = ListTVCModel(userID: userDetails.user.uid)
-                    let homePageViewController = navigationController?.viewControllers[0] as? ListTableViewController
-                    homePageViewController?.viewModel = HomePageViewModel
-                    navigationController?.modalPresentationStyle = .fullScreen
-                    self.present(navigationController!, animated: true, completion: nil)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let navigationController = storyboard.instantiateViewController(withIdentifier: "navCon") as? UINavigationController
+                    let listViewController = navigationController?.viewControllers[0] as? ListTableViewController
                     
+                    navigationController?.modalPresentationStyle = .overFullScreen
+                    
+                    self.present(navigationController!, animated: true)
+                    
+                }
+                
             }
-        
         }
-    }
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
