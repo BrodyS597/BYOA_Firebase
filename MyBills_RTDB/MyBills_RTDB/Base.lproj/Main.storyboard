@@ -97,8 +97,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aBm-KF-eOv">
+                                <rect key="frame" x="87" y="318" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aBm-KF-eOv" secondAttribute="height" multiplier="1:1" id="Ued-jc-cGb"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Burnin'Benji" translatesAutoresizingMaskIntoConstraints="NO" id="HA6-Tj-acC">
-                                <rect key="frame" x="10" y="408" width="394" height="425"/>
+                                <rect key="frame" x="10" y="568" width="394" height="425"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -107,20 +113,23 @@
                         <color key="backgroundColor" red="0.33299115299999998" green="0.43566948179999998" blue="0.26731318240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ocT-uf-Xkw" firstAttribute="top" secondItem="zUp-AA-PqD" secondAttribute="bottom" constant="10" id="1JF-4x-6TJ"/>
+                            <constraint firstItem="aBm-KF-eOv" firstAttribute="top" secondItem="ocT-uf-Xkw" secondAttribute="bottom" constant="10" id="3Gw-XF-Sxj"/>
+                            <constraint firstItem="HA6-Tj-acC" firstAttribute="leading" secondItem="Aih-xF-Gdb" secondAttribute="leading" constant="10" id="6Wm-sb-j08"/>
                             <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="ocT-uf-Xkw" secondAttribute="trailing" constant="10" id="DF4-QT-u5m"/>
                             <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="oOg-io-2to" secondAttribute="trailing" constant="10" id="Len-CA-G1o"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="aBm-KF-eOv" secondAttribute="trailing" constant="87" id="Pcb-Cv-UcQ"/>
                             <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="rNK-xH-xfH" secondAttribute="trailing" constant="10" id="QsV-Og-bEc"/>
                             <constraint firstItem="rNK-xH-xfH" firstAttribute="top" secondItem="oOg-io-2to" secondAttribute="bottom" constant="10" id="T3X-xI-8dA"/>
                             <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="zUp-AA-PqD" secondAttribute="trailing" constant="10" id="WJW-N3-kZg"/>
                             <constraint firstItem="ocT-uf-Xkw" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="Z7A-TZ-LHP"/>
                             <constraint firstItem="oOg-io-2to" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="egh-gy-HiT"/>
                             <constraint firstItem="zUp-AA-PqD" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="fSS-Nd-5Lm"/>
+                            <constraint firstAttribute="trailing" secondItem="HA6-Tj-acC" secondAttribute="trailing" constant="10" id="fez-dg-xH6"/>
                             <constraint firstItem="zUp-AA-PqD" firstAttribute="top" secondItem="rNK-xH-xfH" secondAttribute="bottom" constant="10" id="hLV-50-4B5"/>
+                            <constraint firstItem="HA6-Tj-acC" firstAttribute="top" secondItem="aBm-KF-eOv" secondAttribute="bottom" constant="10" id="l7o-nk-tx9"/>
                             <constraint firstItem="oOg-io-2to" firstAttribute="top" secondItem="vrR-In-GgI" secondAttribute="bottom" constant="10" id="lnT-fn-GJd"/>
-                            <constraint firstItem="HA6-Tj-acC" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="op6-FD-puM"/>
                             <constraint firstItem="rNK-xH-xfH" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="rCU-Sr-KKB"/>
-                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="HA6-Tj-acC" secondAttribute="trailing" constant="10" id="s2Z-6l-wJZ"/>
-                            <constraint firstItem="HA6-Tj-acC" firstAttribute="top" secondItem="ocT-uf-Xkw" secondAttribute="bottom" constant="100" id="xQS-lq-ScN"/>
+                            <constraint firstItem="aBm-KF-eOv" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="87" id="uxd-eu-XYf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yPE-hn-7Iw">
@@ -302,7 +311,6 @@
         <!--Navigation Controller-->
         <scene sceneID="rgc-0O-5g2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xq-4A-T50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="navCon" automaticallyAdjustsScrollViewInsets="NO" id="PMV-Mv-9Qy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iAO-Gg-oO9">
@@ -314,6 +322,7 @@
                         <segue destination="d7M-lM-Ljc" kind="relationship" relationship="rootViewController" id="f8N-KR-iIA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xq-4A-T50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1434.7826086956522" y="158.70535714285714"/>
         </scene>
