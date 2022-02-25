@@ -19,10 +19,13 @@
 		6D5DC40B27C6DA0E00642329 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6D5DC40A27C6DA0E00642329 /* FirebaseAuth */; };
 		6D5DC40D27C6DA0E00642329 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6D5DC40C27C6DA0E00642329 /* FirebaseDatabase */; };
 		6D5DC40F27C6DA0E00642329 /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6D5DC40E27C6DA0E00642329 /* FirebaseDatabaseSwift-Beta */; };
-		6D5DC41127C6F99600642329 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5DC41027C6F99600642329 /* LaunchScreenCopyViewController.swift */; };
 		6D74CE6927C8271C00476397 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6D74CE6827C8271C00476397 /* FirebaseFirestore */; };
 		6D74CE6B27C8271C00476397 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6D74CE6A27C8271C00476397 /* FirebaseStorage */; };
 		6D74CE6D27C82D5000476397 /* FirebaseStorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D74CE6C27C82D5000476397 /* FirebaseStorageController.swift */; };
+		6D74CE7027C8536100476397 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D74CE6E27C8536100476397 /* LoginView.storyboard */; };
+		6D74CE7427C8539F00476397 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D74CE7327C8539F00476397 /* SignUpView.storyboard */; };
+		6D74CE7727C853BB00476397 /* BillDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D74CE7527C853BB00476397 /* BillDetailsView.storyboard */; };
+		6D74CE7A27C8541000476397 /* MyBillsListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D74CE7927C8541000476397 /* MyBillsListView.storyboard */; };
 		6DA87AAF27C58C6E00F248A8 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA87AAE27C58C6E00F248A8 /* Bill.swift */; };
 		6DA87AB127C59DF700F248A8 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA87AB027C59DF700F248A8 /* FirebaseController.swift */; };
 		6DA87AB327C59F2300F248A8 /* ListTVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA87AB227C59F2300F248A8 /* ListTVCModel.swift */; };
@@ -43,8 +46,11 @@
 		6D47A65427C5875200F87CA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D5DC40527C6C63500642329 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D5DC40727C6D22A00642329 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		6D5DC41027C6F99600642329 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		6D74CE6C27C82D5000476397 /* FirebaseStorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageController.swift; sourceTree = "<group>"; };
+		6D74CE6F27C8536100476397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyBills_RTDB/Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
+		6D74CE7327C8539F00476397 /* SignUpView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
+		6D74CE7627C853BB00476397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyBills_RTDB/Base.lproj/BillDetailsView.storyboard; sourceTree = "<group>"; };
+		6D74CE7927C8541000476397 /* MyBillsListView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyBillsListView.storyboard; sourceTree = "<group>"; };
 		6DA87AAE27C58C6E00F248A8 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		6DA87AB027C59DF700F248A8 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		6DA87AB227C59F2300F248A8 /* ListTVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTVCModel.swift; sourceTree = "<group>"; };
@@ -94,7 +100,6 @@
 				6D47A65127C586D700F87CA2 /* Views */,
 				6D47A65027C5864200F87CA2 /* Resources */,
 				6D47A64227C5856C00F87CA2 /* Main.storyboard */,
-				6D47A64727C5856D00F87CA2 /* LaunchScreen.storyboard */,
 			);
 			path = MyBills_RTDB;
 			sourceTree = "<group>";
@@ -115,10 +120,10 @@
 		6D47A65127C586D700F87CA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6D74CE7827C853DC00476397 /* LaunchScreen */,
 				6D5DC40427C6C4EE00642329 /* Authentication */,
 				6D47A65627C587D200F87CA2 /* ListView */,
 				6D47A65727C5880000F87CA2 /* DetailView */,
-				6D5DC41027C6F99600642329 /* LaunchScreenCopyViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			children = (
 				6DA87AB227C59F2300F248A8 /* ListTVCModel.swift */,
 				6DA87AB427C59F8800F248A8 /* ListTableViewController.swift */,
+				6D74CE7927C8541000476397 /* MyBillsListView.storyboard */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			children = (
 				6DA87AB627C5A30C00F248A8 /* DetailViewModel.swift */,
 				6DA87AB827C5A5A600F248A8 /* DetailViewController.swift */,
+				6D74CE7527C853BB00476397 /* BillDetailsView.storyboard */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -161,8 +168,8 @@
 		6D5DC40427C6C4EE00642329 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				6D5DC40527C6C63500642329 /* LoginViewController.swift */,
-				6D5DC40727C6D22A00642329 /* SignUpViewController.swift */,
+				6D74CE7227C8537D00476397 /* SignUp */,
+				6D74CE7127C8536B00476397 /* Login */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -172,6 +179,32 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D74CE7127C8536B00476397 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6D5DC40527C6C63500642329 /* LoginViewController.swift */,
+				6D74CE6E27C8536100476397 /* LoginView.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6D74CE7227C8537D00476397 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				6D5DC40727C6D22A00642329 /* SignUpViewController.swift */,
+				6D74CE7327C8539F00476397 /* SignUpView.storyboard */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		6D74CE7827C853DC00476397 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6D47A64727C5856D00F87CA2 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +277,12 @@
 			files = (
 				6D47A64927C5856D00F87CA2 /* LaunchScreen.storyboard in Resources */,
 				6D47A64627C5856D00F87CA2 /* Assets.xcassets in Resources */,
+				6D74CE7727C853BB00476397 /* BillDetailsView.storyboard in Resources */,
 				6D47A64427C5856C00F87CA2 /* Main.storyboard in Resources */,
+				6D74CE7A27C8541000476397 /* MyBillsListView.storyboard in Resources */,
 				6D47A65527C5875200F87CA2 /* GoogleService-Info.plist in Resources */,
+				6D74CE7027C8536100476397 /* LoginView.storyboard in Resources */,
+				6D74CE7427C8539F00476397 /* SignUpView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5DC41127C6F99600642329 /* LaunchScreenCopyViewController.swift in Sources */,
 				6D5DC40827C6D22A00642329 /* SignUpViewController.swift in Sources */,
 				6DA87AB927C5A5A600F248A8 /* DetailViewController.swift in Sources */,
 				6DA87AB127C59DF700F248A8 /* FirebaseController.swift in Sources */,
@@ -289,6 +325,22 @@
 				6D47A64827C5856D00F87CA2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6D74CE6E27C8536100476397 /* LoginView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D74CE6F27C8536100476397 /* Base */,
+			);
+			name = LoginView.storyboard;
+			sourceTree = "<group>";
+		};
+		6D74CE7527C853BB00476397 /* BillDetailsView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D74CE7627C853BB00476397 /* Base */,
+			);
+			name = BillDetailsView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

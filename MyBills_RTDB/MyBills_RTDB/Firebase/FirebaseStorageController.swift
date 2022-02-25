@@ -17,7 +17,6 @@ struct FirebaseStorageController {
                 print(error)
                 return
             }
-            
             self.storage.child(bill.imagePath).downloadURL { url, error in
                 if let error = error {
                     print(error)
@@ -34,7 +33,6 @@ struct FirebaseStorageController {
                 completion(.failure(.failure(error)))
                 return
             }
-            
             guard let data = data,
                   let image = UIImage(data: data)
             else { completion(.failure(.noData)); return }

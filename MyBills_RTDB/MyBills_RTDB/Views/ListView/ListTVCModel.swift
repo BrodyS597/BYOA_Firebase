@@ -26,7 +26,7 @@ class ListTVCModel {
             switch result {
             case .success(let bills):
                 self.bills = bills
-                self.delegate?.updateViews() 
+                self.delegate?.updateViews()
             case .failure(let error):
                 print(error.description)
             }

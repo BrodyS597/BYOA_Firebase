@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VGa-lR-MrR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="vJU-kz-OyK">
+            <objects>
+                <viewController id="VGa-lR-MrR" customClass="DetailViewController" customModule="MyBills_RTDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aih-xF-Gdb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vrR-In-GgI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="systemYellowColor"/>
+                                <size key="shadowOffset" width="2" height="-1"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name... ex. Water Bill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOg-io-2to">
+                                <rect key="frame" x="10" y="142" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Due Date... ex. 02/23/2022" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-xH-xfH">
+                                <rect key="frame" x="10" y="186" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Merchant Name... ex. Verizon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUp-AA-PqD">
+                                <rect key="frame" x="10" y="230" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount... ex. 132.89" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocT-uf-Xkw">
+                                <rect key="frame" x="10" y="274" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aBm-KF-eOv">
+                                <rect key="frame" x="87" y="318.5" width="240" height="239.5"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aBm-KF-eOv" secondAttribute="height" multiplier="1:1" id="Ued-jc-cGb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Burnin'Benji" translatesAutoresizingMaskIntoConstraints="NO" id="HA6-Tj-acC">
+                                <rect key="frame" x="10" y="568" width="394" height="425"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZYU-1J-2x3"/>
+                        <color key="backgroundColor" red="0.33299115299999998" green="0.43566948179999998" blue="0.26731318240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ocT-uf-Xkw" firstAttribute="top" secondItem="zUp-AA-PqD" secondAttribute="bottom" constant="10" id="1JF-4x-6TJ"/>
+                            <constraint firstItem="aBm-KF-eOv" firstAttribute="top" secondItem="ocT-uf-Xkw" secondAttribute="bottom" constant="10" id="3Gw-XF-Sxj"/>
+                            <constraint firstItem="HA6-Tj-acC" firstAttribute="leading" secondItem="Aih-xF-Gdb" secondAttribute="leading" constant="10" id="6Wm-sb-j08"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="ocT-uf-Xkw" secondAttribute="trailing" constant="10" id="DF4-QT-u5m"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="oOg-io-2to" secondAttribute="trailing" constant="10" id="Len-CA-G1o"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="aBm-KF-eOv" secondAttribute="trailing" constant="87" id="Pcb-Cv-UcQ"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="rNK-xH-xfH" secondAttribute="trailing" constant="10" id="QsV-Og-bEc"/>
+                            <constraint firstItem="rNK-xH-xfH" firstAttribute="top" secondItem="oOg-io-2to" secondAttribute="bottom" constant="10" id="T3X-xI-8dA"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="zUp-AA-PqD" secondAttribute="trailing" constant="10" id="WJW-N3-kZg"/>
+                            <constraint firstItem="ocT-uf-Xkw" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="Z7A-TZ-LHP"/>
+                            <constraint firstItem="oOg-io-2to" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="egh-gy-HiT"/>
+                            <constraint firstItem="zUp-AA-PqD" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="fSS-Nd-5Lm"/>
+                            <constraint firstAttribute="trailing" secondItem="HA6-Tj-acC" secondAttribute="trailing" constant="10" id="fez-dg-xH6"/>
+                            <constraint firstItem="zUp-AA-PqD" firstAttribute="top" secondItem="rNK-xH-xfH" secondAttribute="bottom" constant="10" id="hLV-50-4B5"/>
+                            <constraint firstItem="HA6-Tj-acC" firstAttribute="top" secondItem="aBm-KF-eOv" secondAttribute="bottom" constant="10" id="l7o-nk-tx9"/>
+                            <constraint firstItem="oOg-io-2to" firstAttribute="top" secondItem="vrR-In-GgI" secondAttribute="bottom" constant="10" id="lnT-fn-GJd"/>
+                            <constraint firstItem="rNK-xH-xfH" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="rCU-Sr-KKB"/>
+                            <constraint firstItem="aBm-KF-eOv" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="87" id="uxd-eu-XYf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yPE-hn-7Iw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="clf-7H-7RZ">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="VGa-lR-MrR" id="eeC-lf-hXQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="ocT-uf-Xkw" id="7S3-cI-Gc2"/>
+                        <outlet property="billImageView" destination="aBm-KF-eOv" id="F6p-86-oxc"/>
+                        <outlet property="dueDateTextField" destination="rNK-xH-xfH" id="gmD-7Z-Sz0"/>
+                        <outlet property="merchantNameTextField" destination="zUp-AA-PqD" id="D70-Og-hiD"/>
+                        <outlet property="nameTextFIeld" destination="oOg-io-2to" id="T6h-bA-2i9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKb-iF-LJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3149.275362318841" y="158.70535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Burnin'Benji" width="573" height="425"/>
+        <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

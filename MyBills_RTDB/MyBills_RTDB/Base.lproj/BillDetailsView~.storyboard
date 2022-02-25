@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List Table View Controller-->
+        <scene sceneID="ouD-Y7-xkH">
+            <objects>
+                <tableViewController storyboardIdentifier="MyBillsList" id="d7M-lM-Ljc" customClass="ListTableViewController" customModule="MyBills_RTDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zkv-Sg-mSF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.39586773510000001" green="0.60954582690000003" blue="0.36738669870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Bills" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xh7-j0-Sm8">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" systemColor="systemYellowColor"/>
+                            <size key="shadowOffset" width="2" height="-1"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" id="1Se-dE-jLk">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Se-dE-jLk" id="dS1-ww-pax">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.59897506239999998" green="0.86541324850000001" blue="0.78463470940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.59897506239999998" green="0.86541324850000001" blue="0.78463470940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="VGa-lR-MrR" kind="show" identifier="showBill" id="HRP-aw-dOm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d7M-lM-Ljc" id="bBZ-22-LN4"/>
+                            <outlet property="delegate" destination="d7M-lM-Ljc" id="CNa-V5-mCr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MUG-YC-Ffs">
+                        <barButtonItem key="backBarButtonItem" title="Back to List" id="JfG-iF-tRI"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="KgS-xy-s6H">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonTapped:" destination="d7M-lM-Ljc" id="qXd-o0-ddj"/>
+                                <segue destination="VGa-lR-MrR" kind="show" id="2P9-SA-P6p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0c-hL-0Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2344.9275362318845" y="158.70535714285714"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="vJU-kz-OyK">
+            <objects>
+                <viewController id="VGa-lR-MrR" customClass="DetailViewController" customModule="MyBills_RTDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aih-xF-Gdb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vrR-In-GgI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="systemYellowColor"/>
+                                <size key="shadowOffset" width="2" height="-1"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name... ex. Water Bill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOg-io-2to">
+                                <rect key="frame" x="10" y="142" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Due Date... ex. 02/23/2022" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-xH-xfH">
+                                <rect key="frame" x="10" y="186" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Merchant Name... ex. Verizon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUp-AA-PqD">
+                                <rect key="frame" x="10" y="230" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount... ex. 132.89" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocT-uf-Xkw">
+                                <rect key="frame" x="10" y="274" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aBm-KF-eOv">
+                                <rect key="frame" x="87" y="318.5" width="240" height="239.5"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aBm-KF-eOv" secondAttribute="height" multiplier="1:1" id="Ued-jc-cGb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Burnin'Benji" translatesAutoresizingMaskIntoConstraints="NO" id="HA6-Tj-acC">
+                                <rect key="frame" x="10" y="568" width="394" height="425"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZYU-1J-2x3"/>
+                        <color key="backgroundColor" red="0.33299115299999998" green="0.43566948179999998" blue="0.26731318240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ocT-uf-Xkw" firstAttribute="top" secondItem="zUp-AA-PqD" secondAttribute="bottom" constant="10" id="1JF-4x-6TJ"/>
+                            <constraint firstItem="aBm-KF-eOv" firstAttribute="top" secondItem="ocT-uf-Xkw" secondAttribute="bottom" constant="10" id="3Gw-XF-Sxj"/>
+                            <constraint firstItem="HA6-Tj-acC" firstAttribute="leading" secondItem="Aih-xF-Gdb" secondAttribute="leading" constant="10" id="6Wm-sb-j08"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="ocT-uf-Xkw" secondAttribute="trailing" constant="10" id="DF4-QT-u5m"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="oOg-io-2to" secondAttribute="trailing" constant="10" id="Len-CA-G1o"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="aBm-KF-eOv" secondAttribute="trailing" constant="87" id="Pcb-Cv-UcQ"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="rNK-xH-xfH" secondAttribute="trailing" constant="10" id="QsV-Og-bEc"/>
+                            <constraint firstItem="rNK-xH-xfH" firstAttribute="top" secondItem="oOg-io-2to" secondAttribute="bottom" constant="10" id="T3X-xI-8dA"/>
+                            <constraint firstItem="ZYU-1J-2x3" firstAttribute="trailing" secondItem="zUp-AA-PqD" secondAttribute="trailing" constant="10" id="WJW-N3-kZg"/>
+                            <constraint firstItem="ocT-uf-Xkw" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="Z7A-TZ-LHP"/>
+                            <constraint firstItem="oOg-io-2to" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="egh-gy-HiT"/>
+                            <constraint firstItem="zUp-AA-PqD" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="fSS-Nd-5Lm"/>
+                            <constraint firstAttribute="trailing" secondItem="HA6-Tj-acC" secondAttribute="trailing" constant="10" id="fez-dg-xH6"/>
+                            <constraint firstItem="zUp-AA-PqD" firstAttribute="top" secondItem="rNK-xH-xfH" secondAttribute="bottom" constant="10" id="hLV-50-4B5"/>
+                            <constraint firstItem="HA6-Tj-acC" firstAttribute="top" secondItem="aBm-KF-eOv" secondAttribute="bottom" constant="10" id="l7o-nk-tx9"/>
+                            <constraint firstItem="oOg-io-2to" firstAttribute="top" secondItem="vrR-In-GgI" secondAttribute="bottom" constant="10" id="lnT-fn-GJd"/>
+                            <constraint firstItem="rNK-xH-xfH" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="10" id="rCU-Sr-KKB"/>
+                            <constraint firstItem="aBm-KF-eOv" firstAttribute="leading" secondItem="ZYU-1J-2x3" secondAttribute="leading" constant="87" id="uxd-eu-XYf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yPE-hn-7Iw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="clf-7H-7RZ">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="VGa-lR-MrR" id="eeC-lf-hXQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="ocT-uf-Xkw" id="7S3-cI-Gc2"/>
+                        <outlet property="billImageView" destination="aBm-KF-eOv" id="F6p-86-oxc"/>
+                        <outlet property="dueDateTextField" destination="rNK-xH-xfH" id="gmD-7Z-Sz0"/>
+                        <outlet property="merchantNameTextField" destination="zUp-AA-PqD" id="D70-Og-hiD"/>
+                        <outlet property="nameTextFIeld" destination="oOg-io-2to" id="T6h-bA-2i9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKb-iF-LJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3149.275362318841" y="158.70535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rgc-0O-5g2">
+            <objects>
+                <navigationController storyboardIdentifier="navCon" automaticallyAdjustsScrollViewInsets="NO" id="PMV-Mv-9Qy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="backward" catalog="system" id="iAO-Gg-oO9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d7M-lM-Ljc" kind="relationship" relationship="rootViewController" id="f8N-KR-iIA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xq-4A-T50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434.7826086956522" y="158.70535714285714"/>
+        </scene>
+        <!--login-->
+        <scene sceneID="2Jd-xe-Sne">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="login" storyboardName="LoginView" referencedIdentifier="login" id="I1d-Yd-foB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7q-yR-buJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="813"/>
+        </scene>
+        <!--signUp-->
+        <scene sceneID="ZNC-01-VC6">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="signUp" storyboardName="SignUpView" referencedIdentifier="signUp" id="f6O-Rj-wyW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZs-qk-7Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2909" y="824"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HRP-aw-dOm"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Burnin'Benji" width="573" height="425"/>
+        <image name="backward" catalog="system" width="128" height="79"/>
+        <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

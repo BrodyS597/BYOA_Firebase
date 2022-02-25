@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,14 +26,9 @@ class LoginViewController: UIViewController {
     // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
         validateFields()
-        //        if validateFields() {
-        //        } else {
-        //            print("Fields are empty")
-        //        }
         
         if let emailAddress = emailAddressTextField.text, !emailAddress.isEmpty,
            let password = passwordTextField.text, !password.isEmpty {
-            
             Auth.auth().signIn(withEmail: emailAddress, password: password) { result, error in
                 switch result {
                 case .none:
@@ -42,19 +36,14 @@ class LoginViewController: UIViewController {
                     let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                     alertController.addAction(confirmAction)
                     self.present(alertController, animated: true, completion: nil)
-                    
                 case .some(let userDetails):
                     print("Welcome back!", userDetails.user.email!)
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let navigationController = storyboard.instantiateViewController(withIdentifier: "navCon") as? UINavigationController
                     let listViewController = navigationController?.viewControllers[0] as? ListTableViewController
-                    
                     navigationController?.modalPresentationStyle = .overFullScreen
-                    
                     self.present(navigationController!, animated: true)
-                    
                 }
-                
             }
         }
     }
@@ -62,53 +51,37 @@ class LoginViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "signUp")
-        
         viewController.modalPresentationStyle = .overFullScreen
         present(viewController, animated: true)
-        
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     func validateFields() -> Bool {
         return emailAddressTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
     }
     
-    func login() {
-        guard let emailAddress = emailAddressTextField.text,
-              let password = passwordTextField.text else { return }
-        Auth.auth().signIn(withEmail: emailAddress, password: password) { [weak self] authResult, error in
-            guard let strongSelf = self else { return }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            strongSelf.segueToBillsList()
-        }
-    }
+    //    func login() {
+    //        guard let emailAddress = emailAddressTextField.text,
+    //              let password = passwordTextField.text else { return }
+    //        Auth.auth().signIn(withEmail: emailAddress, password: password) { [weak self] authResult, error in
+    //            guard let strongSelf = self else { return }
+    //            if let error = error {
+    //                print(error.localizedDescription)
+    //            }
+    //            strongSelf.segueToBillsList()
+    //        }
+    //    }
     
     func checkUserInfo() {
         if Auth.auth().currentUser != nil {
             print(Auth.auth().currentUser?.uid)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "navCon")
-            
             viewController.modalPresentationStyle = .overFullScreen
             present(viewController, animated: true)
         }
     }
     
     func segueToBillsList() {
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "navCon")
         viewController.modalPresentationStyle = .overFullScreen

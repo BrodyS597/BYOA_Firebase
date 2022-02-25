@@ -30,7 +30,7 @@ struct FirebaseController {
     let database = Firestore.firestore()
     
     func saveBill(_ bill: Bill) {
-            database.collection(Bill.Key.collectionType).document(bill.uuid).setData(bill.BillData)
+        database.collection(Bill.Key.collectionType).document(bill.uuid).setData(bill.BillData)
         //ref.child(Bill.Key.collectionType).child(bill.uuid).setValue(bill.BillData)
     }
     
@@ -53,24 +53,24 @@ struct FirebaseController {
             completion(.success(sortedBills))
         }
         
-//        //Fetching the data from the real time database. Specified by the child key "bills"
-//        ref.child(Bill.Key.collectionType).getData { error, snapshot in
-//            //checking to see if there was an error, if so, we complete with a failure and return out of the function.
-//            if let error = error {
-//                completion(.failure(.failure(error)))
-//                return
-//            }
-//            //checking to see if we have data, if so, completing with a dictionary of type dictionary
-//            guard let data = snapshot.value as? [String: [String: Any]] else { completion(.failure(.noData)); return }
-//            //gets the values from our data dictionary and turns them into an array.
-//            let dataArray = Array(data.values)
-//            //Transforms our array of dictionaries into an array of bills
-//            let bills = dataArray.compactMap({ Bill(fromDictionary: $0) })
-//            //sorting bills by due date
-//            let sortedBills = bills.sorted(by: { $0.dueDate > $1.dueDate })
-//            //completing with our sorted bills
-//            completion(.success(sortedBills))
-//        }
+        //        //Fetching the data from the real time database. Specified by the child key "bills"
+        //        ref.child(Bill.Key.collectionType).getData { error, snapshot in
+        //            //checking to see if there was an error, if so, we complete with a failure and return out of the function.
+        //            if let error = error {
+        //                completion(.failure(.failure(error)))
+        //                return
+        //            }
+        //            //checking to see if we have data, if so, completing with a dictionary of type dictionary
+        //            guard let data = snapshot.value as? [String: [String: Any]] else { completion(.failure(.noData)); return }
+        //            //gets the values from our data dictionary and turns them into an array.
+        //            let dataArray = Array(data.values)
+        //            //Transforms our array of dictionaries into an array of bills
+        //            let bills = dataArray.compactMap({ Bill(fromDictionary: $0) })
+        //            //sorting bills by due date
+        //            let sortedBills = bills.sorted(by: { $0.dueDate > $1.dueDate })
+        //            //completing with our sorted bills
+        //            completion(.success(sortedBills))
+        //        }
     }
 }
 

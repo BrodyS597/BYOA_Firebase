@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     // MARK: -IBOutlets
     @IBOutlet weak var nameTextFIeld: UITextField!
     @IBOutlet weak var dueDateTextField: UITextField!

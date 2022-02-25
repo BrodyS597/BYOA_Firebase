@@ -14,8 +14,7 @@ class ListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ListTVCModel(delegate: self)
-        
-            //uncomment the line below if you want to experience the Benji RAM Killer 600
+        //uncomment the line below if you want to experience the Benji RAM Killer 6000
         //createLayer()
     }
     
@@ -37,7 +36,6 @@ class ListTableViewController: UITableViewController {
         //cell.color =
         cell.contents = UIImage(named: "Burnin'Benji")!.cgImage
         layer.emitterCells = [cell]
-        
         view.layer.addSublayer(layer)
     }
     
@@ -45,26 +43,19 @@ class ListTableViewController: UITableViewController {
     @IBAction func addButtonTapped(_ sender: Any) {
     }
     
-    
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.bills.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
         cell.textLabel?.text = viewModel.bills[indexPath.row].name
-        
         return cell
     }
     
-    
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             let billToDelete = viewModel.bills[indexPath.row]
             FirebaseController().deleteBill(billToDelete)
             viewModel.bills.remove(at: indexPath.row)
@@ -73,8 +64,6 @@ class ListTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailViewController {
             if segue.identifier == "showBill",
